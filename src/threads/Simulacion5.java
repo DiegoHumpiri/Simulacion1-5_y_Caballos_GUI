@@ -16,6 +16,10 @@ import javax.swing.JLabel;
 public class Simulacion5 {
 
 	private JFrame frame;
+	private Demonio4 d1;
+	private Demonio4 d2;
+	JTextArea textOut;
+	JButton botonTerminar;
 
 	/**
 	 * Launch the application.
@@ -54,15 +58,30 @@ public class Simulacion5 {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				d1 = new Demonio4("Devil Jin", textOut);
+				d2 = new Demonio4("True Ogre", textOut);
+				d1.start();
+				d2.start();
+				botonTerminar.setEnabled(true);
 			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Terminar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
+					d1.stop();
+					d2.stop();
+					textOut.setText("");
+				} catch (Exception e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
+				btnNewButton_1.setEnabled(false);
 			}
 		});
+		btnNewButton_1.setEnabled(false);
+		botonTerminar = btnNewButton_1;
 		
 		JLabel lblNewLabel = new JLabel("Hecho por: Diego Humpiri <dhumpiriv@ulasalle.edu.pe>");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
@@ -94,6 +113,7 @@ public class Simulacion5 {
 		);
 		
 		JTextArea textOutput = new JTextArea();
+		this.textOut = textOutput;
 		scrollPane.setViewportView(textOutput);
 		frame.getContentPane().setLayout(groupLayout);
 	}
