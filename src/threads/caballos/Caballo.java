@@ -20,15 +20,18 @@ public class Caballo extends Thread {
 			this.barraAvance.setValue(
 				this.barraAvance.getValue() + 1);
 			try {
-				sleep( (int)(Math.random() * 1000) );
+				sleep( (int)(Math.random() * 500) );
 				estado.setText(estado.getText() + 
-					"El caballo " + this.getName() + "descansa.\n");
+					
+					"- El caballo " + this.getName() + "descansa.\n" );
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		estado.setText("Fin de la carrera para:" 
-			+ this.getName() + ".\n");
+		estado.setText(estado.getText() + 
+				"------------------------------------------------------------------\n" + 
+				"- Fin de la carrera para: " + this.getName() + ".\n" +
+				"------------------------------------------------------------------\n");
 	}
 }
