@@ -1,4 +1,4 @@
-package threads.caballos;
+//package threads.caballos;
 
 import java.awt.EventQueue;
 
@@ -95,7 +95,7 @@ public class Hipodromo {
 				caballoTornado.start();
 				caballoPegasus.start();
 				caballoSocrates.start();
-				caballoCaliostro.start();			
+				caballoCaliostro.start();
 			}
 		});
 		
