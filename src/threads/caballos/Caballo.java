@@ -43,8 +43,9 @@ public class Caballo extends Thread {
 				"------------------------------------------------------------------\n" + 
 				"- Fin de la carrera para: " + this.getName() + ".\n" +
 				"------------------------------------------------------------------\n");
-		System.out.println( this.getName() + "\nDescansó: " + this.getDescanso() + "\n" );
-		System.out.println( "Corrió: " + ( corriendoTotal - this.getDescanso() ) + "\n" );
+		System.out.println( this.getName() + "\nDescanso: " + this.getDescanso() );
+		System.out.println( "Corrio: " + ( corriendoTotal - this.getDescanso() ) );
+		System.out.println( "Total: " + ( corriendoTotal ) );
 	}
 	
 	public long getDescanso() {
